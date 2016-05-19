@@ -1,4 +1,4 @@
-# node-blog
+# nblog
 node+express+mongodb搭建博客系统    
 
 下载解压安装包
