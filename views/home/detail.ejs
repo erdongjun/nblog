@@ -1,0 +1,65 @@
+<%- include common/head %>
+
+<div class="uk-grid">
+	<div class="uk-width-3-4">
+		<div>
+			<ul class="uk-breadcrumb">
+                <li><a href="/">主页</a></li>
+                <li><a href="/u/<%= post.name %>"><%= post.name %></a> </li>
+                <li><span><%= post.title %></span></li>
+            </ul>
+		</div>
+		<article class="uk-article index-article">
+        <p>
+         <% if (user && (user.name == post.name)) { %>
+          <span><a class="edit" href="/edit/<%= post.name %>/<%= post.time.day %>/<%= post.title %>">编辑</a></span>
+          <span><a class="edit" href="/remove/<%= post.name %>/<%= post.time.day %>/<%= post.title %>">删除</a></span>
+        <% } %>
+        </p>
+			<h1 class="uk-article-title"><%= post.title %></h1>
+			 <p class="info">
+              作者：<a href="/u/<%= post.name %>"><%= post.name %></a> | 
+              日期：<%= post.time.minute %>
+               标签：
+                  <% post.tags.forEach(function (tag, index) { %>
+                    <% if (tag) { %>
+                      <a class="tag" href="/tags/<%= tag %>"><%= tag %></a>
+                    <% } %>
+                  <% }) %>
+            </p>
+			<div>
+				<%- post.post %>
+			</div>
+		</article>
+        <%- include common/comment %>
+	</div>
+	<div class="uk-width-1-4">
+		<div class="uk-panel uk-panel-box uk-text-center">
+         <img class="uk-border-circle" width="120" height="120"  src="images/qq.png" alt="">
+            <h3>游客</h3>
+            <p>欢迎游客</p>
+        </div>
+        <div class="uk-panel">
+            <h3 class="uk-panel-title">归档</h3>
+            <ul class="uk-list uk-list-line">
+                <li><a href="#">2012-3</a></li>
+                <li><a href="#">2012-3</a></li>
+                <li><a href="#">2012-3</a></li>
+                <li><a href="#">2012-3</a></li>
+                <li><a href="#">2012-3</a></li>
+            </ul>
+        </div>
+        <div class="uk-panel">
+            <h3 class="uk-panel-title">联系我</h3>
+            <ul class="uk-list">
+                <li><a href="#">GitHub</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Facebook</a></li>
+            </ul>
+        </div>
+	</div>
+</div>
+<%- include common/foot %>
+
+
+

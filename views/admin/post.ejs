@@ -1,0 +1,15 @@
+<%- include common/head %>
+<form class="uk-form" method="post">
+	<div class="uk-form-row">
+    	<input type="text" placeholder="标题" name="title" class="uk-form-large">
+    </div>
+    <div class="uk-form-row">
+    	标签：<br />
+    	<input type="text" name="tag1" /><input type="text" name="tag2" /><input type="text" name="tag3" /><br />
+    </div>
+    <div class="uk-form-row">
+   		<textarea cols="200" rows="20" placeholder="内容" name="post"></textarea>
+	</div>
+	<input type="submit" value="发表" />
+</form>
+<%- include common/foot %>
